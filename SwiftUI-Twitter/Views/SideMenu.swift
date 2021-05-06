@@ -7,23 +7,6 @@
 
 import SwiftUI
 
-
-struct MenuContent: View {
-    var body: some View {
-        List {
-            Text("My Profile").onTapGesture {
-                print("My Profile")
-            }
-            Text("Posts").onTapGesture {
-                print("Posts")
-            }
-            Text("Logout").onTapGesture {
-                print("Logout")
-            }
-        }
-    }
-}
-
 struct SideMenu: View {
     
     @EnvironmentObject var sideMenu: SideMenuData
@@ -44,7 +27,7 @@ struct SideMenu: View {
             }
             
             HStack {
-                MenuContent()
+                Text("Hello")
                     .frame(width: width)
                     .background(Color.white)
                     .offset(x: sideMenu.isOpen ? 0 : -width)
