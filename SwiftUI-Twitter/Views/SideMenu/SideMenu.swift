@@ -27,7 +27,7 @@ struct SideMenu: View {
             }
             
             HStack {
-                Text("Hello")
+                Profile()
                     .frame(width: width)
                     .background(Color.white)
                     .offset(x: sideMenu.isOpen ? 0 : -width)

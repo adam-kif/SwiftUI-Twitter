@@ -15,10 +15,12 @@
 		66270889263BB9170020AE99 /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66270888263BB9170020AE99 /* Explore.swift */; };
 		6627088B263BB9350020AE99 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6627088A263BB9350020AE99 /* Notifications.swift */; };
 		6627088D263BB9610020AE99 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6627088C263BB9610020AE99 /* Messages.swift */; };
+		663E66FE2645ECB3004D94EF /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663E66FD2645ECB3004D94EF /* Authentication.swift */; };
 		669938922642E71900E9F7D0 /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669938912642E71900E9F7D0 /* ToolBar.swift */; };
 		669938952642EFAE00E9F7D0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669938942642EFAE00E9F7D0 /* Color.swift */; };
 		66C93805264348730064EA30 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C93804264348730064EA30 /* SideMenu.swift */; };
 		66C93807264357EC0064EA30 /* SideMenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C93806264357EC0064EA30 /* SideMenuData.swift */; };
+		66FC75182644BAD40036B756 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FC75172644BAD40036B756 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +34,12 @@
 		66270888263BB9170020AE99 /* Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
 		6627088A263BB9350020AE99 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		6627088C263BB9610020AE99 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		663E66FD2645ECB3004D94EF /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		669938912642E71900E9F7D0 /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
 		669938942642EFAE00E9F7D0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		66C93804264348730064EA30 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		66C93806264357EC0064EA30 /* SideMenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuData.swift; sourceTree = "<group>"; };
+		66FC75172644BAD40036B756 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				669938912642E71900E9F7D0 /* ToolBar.swift */,
-				66C93804264348730064EA30 /* SideMenu.swift */,
+				66FC75162644BA610036B756 /* SideMenu */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +141,8 @@
 				66270888263BB9170020AE99 /* Explore.swift */,
 				6627088A263BB9350020AE99 /* Notifications.swift */,
 				6627088C263BB9610020AE99 /* Messages.swift */,
+				66FC75172644BAD40036B756 /* Profile.swift */,
+				663E66FD2645ECB3004D94EF /* Authentication.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -147,6 +153,14 @@
 				669938942642EFAE00E9F7D0 /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		66FC75162644BA610036B756 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				66C93804264348730064EA30 /* SideMenu.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +179,8 @@
 			dependencies = (
 			);
 			name = "SwiftUI-Twitter";
+			packageProductDependencies = (
+			);
 			productName = "SwiftUI-Twitter";
 			productReference = 6627086E263BB6FC0020AE99 /* SwiftUI-Twitter.app */;
 			productType = "com.apple.product-type.application";
@@ -192,6 +208,8 @@
 				Base,
 			);
 			mainGroup = 66270865263BB6FC0020AE99;
+			packageReferences = (
+			);
 			productRefGroup = 6627086F263BB6FC0020AE99 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -226,8 +244,10 @@
 				669938922642E71900E9F7D0 /* ToolBar.swift in Sources */,
 				669938952642EFAE00E9F7D0 /* Color.swift in Sources */,
 				66270887263BB8F30020AE99 /* Home.swift in Sources */,
+				66FC75182644BAD40036B756 /* Profile.swift in Sources */,
 				66270872263BB6FC0020AE99 /* SwiftUI_TwitterApp.swift in Sources */,
 				66C93807264357EC0064EA30 /* SideMenuData.swift in Sources */,
+				663E66FE2645ECB3004D94EF /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,8 @@ struct SwiftUI_TwitterApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+//            MainTabView()
+            Authentication()
         }
     }
 }
