@@ -10,10 +10,10 @@ import SwiftUI
 struct Explore: View {
     var body: some View {
         VStack{
-            Text("Feeed Screen")
+            Text("Explore Screen")
             
         }//End of VSTack
-        .modifier(ToolBar(navbarTitle: "Search", navbarIcon: nil, iconName: "gearshape"))
+        .modifier(NavigationBar(navbarTitle: "Search", navbarIcon: nil, iconName: "gearshape"))
     }
 }
 
@@ -21,6 +21,7 @@ struct Explore_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
             Explore()
+                .environmentObject(SideMenuData())
         }
     }
 }

@@ -14,10 +14,13 @@ struct SwiftUI_TwitterApp: App {
         UINavigationBar.appearance().barTintColor = UIColor.white
     }
     
+    @State private var mainTab = false
     var body: some Scene {
         WindowGroup {
-//            MainTabView()
-            Authentication()
+            NavigationView{
+                    Authentication()
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

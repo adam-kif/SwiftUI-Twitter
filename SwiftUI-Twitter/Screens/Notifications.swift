@@ -13,7 +13,7 @@ struct Notifications: View {
             Text("Feeed Screen")
             
         }//End of VSTack
-        .modifier(ToolBar(navbarTitle: "Notifications", navbarIcon: nil, iconName: "gearshape"))
+        .modifier(NavigationBar(navbarTitle: "Notifications", navbarIcon: nil, iconName: "gearshape"))
     }
 }
 
@@ -21,6 +21,7 @@ struct Notifications_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
         Notifications()
+            .environmentObject(SideMenuData())
         }
     }
 }

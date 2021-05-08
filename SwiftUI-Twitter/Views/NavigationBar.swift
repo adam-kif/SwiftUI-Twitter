@@ -1,5 +1,5 @@
 //
-//  ToolBar.swift
+//  NavigationBar.swift
 //  SwiftUI-Twitter
 //
 //  Created by Adam on 5/5/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ToolBar: ViewModifier {
+struct NavigationBar: ViewModifier {
     
     @EnvironmentObject var sideMenu: SideMenuData
     
@@ -17,7 +17,7 @@ struct ToolBar: ViewModifier {
     
     func body(content: Content) -> some View {
         
-        NavigationView{
+//        NavigationView{
             ZStack{
                 
                 content
@@ -54,10 +54,10 @@ struct ToolBar: ViewModifier {
                 
                 SideMenu()
                 
+                
             }//End of ZSTack
             .ignoresSafeArea()
-        }
-        
+//        }
     }
     
 }

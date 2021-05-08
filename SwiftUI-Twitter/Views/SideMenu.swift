@@ -13,13 +13,12 @@ struct SideMenu: View {
     
     let width: CGFloat = 300
 
-    
     var body: some View {
         ZStack {
             GeometryReader { _ in
                 EmptyView()
             }
-            .background(Color.darkColor.opacity(0.1))
+            .background(Color.primaryColor.opacity(0.1))
             .opacity(sideMenu.isOpen ? 1.0 : 0.0)
             .animation(Animation.easeIn.delay(0.25))
             .onTapGesture {

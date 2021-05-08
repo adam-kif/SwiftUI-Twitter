@@ -7,53 +7,133 @@
 
 import SwiftUI
 
+//MARK: - Enum CustomTab
+enum CustomTab : String{
+    case Home
+    case Explore
+    case Notifications
+    case Messages
+}
+
 struct MainTabView: View {
     
-    @State private var selectedTab = 0
+    @State private var currentTab: CustomTab = .Home
+    
+    var tabs: [CustomTab] = [.Home, .Explore, .Notifications, .Messages]
     
     var body: some View {
         
-        TabView(selection: $selectedTab) {
+        VStack{
             
-            Home()
-                .environmentObject(SideMenuData())
+            switch currentTab {
+            case .Home:
+                Home()
+                    .environmentObject(SideMenuData())
                 
-                .tabItem {
-                    Image(systemName: selectedTab == 0 ? "house.fill" : "house")
-                }
-                .tag(0)
+            case .Explore:
+                Explore()
+                    .environmentObject(SideMenuData())
+                
+            case .Notifications:
+                Notifications()
+                    .environmentObject(SideMenuData())
+                
+            case .Messages:
+                Messages()
+                    .environmentObject(SideMenuData())
+                
+            }
             
-            Explore()
-                .environmentObject(SideMenuData())
+            Spacer()
+            
+            HStack{
+                Spacer()
                 
-                .tabItem {
-                    Image(selectedTab == 0 ? "search" : "search_fill")
+                //MARK: - Home Tab
+                VStack{
+                    Rectangle()
+                        .frame( height: 4)
+                        .foregroundColor(currentTab == .Home ? .primaryColor : .gray.opacity(0.2))
                     
-                }
-                .tag(1)
-            
-            
-            Notifications()
-                .environmentObject(SideMenuData())
+                    Button(action: {
+                        currentTab = .Home
+                    }){
+                        Image(systemName: currentTab == .Home ? "house.fill" : "house")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25, height: 25)
+                            .foregroundColor( currentTab == .Home ? .primaryColor : .gray.opacity(0.4))
+                            .padding(.vertical, 0.02)
+                        
+                    }//End of Button
+                }//End of VStack
                 
-                .tabItem {
-                    Image(systemName: selectedTab == 2 ? "bell.fill" : "bell")
-                }
-                .tag(2)
+                //MARK: - Explore Tab
+                VStack{
+                    Rectangle()
+                        .frame( height: 3)
+                        .foregroundColor(currentTab == .Explore ? .primaryColor : .gray.opacity(0.2))
+                    
+                    Button(action: {
+                        currentTab = .Explore
+                    }){
+                        Image(currentTab == .Explore ? "search" : "search_fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25, height: 25)
+                            .foregroundColor( currentTab == .Explore ? .primaryColor : .gray.opacity(0.4))
+                            .padding(.vertical, 0.02)
+                    }//End of Button
+                }//End of VStack
+                
+                //MARK: - Notifications Tab
+                VStack{
+                    Rectangle()
+                        .frame(height: 3)
+                        .foregroundColor(currentTab == .Notifications ? .primaryColor : .gray.opacity(0.2))
+                    
+                    Button(action: {
+                        currentTab = .Notifications
+                    }){
+                        Image(systemName: currentTab == .Notifications ? "bell.fill" : "bell")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25, height: 25)
+                            .foregroundColor( currentTab == .Notifications ? .primaryColor : .gray.opacity(0.4))
+                            .padding(.vertical, 0.02)
+                    }//End of Button
+                }//End of VStack
+                
+                //MARK: - Messages Tab
+                VStack{
+                    Rectangle()
+                        .frame(height: 3)
+                        .foregroundColor(currentTab == .Messages ? .primaryColor : .gray.opacity(0.2))
+                    
+                    Button(action: {
+                        currentTab = .Messages
+                    }){
+                        Image(systemName: currentTab == .Messages ? "envelope.fill" : "envelope")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25, height: 25)
+                            .foregroundColor( currentTab == .Messages ? .primaryColor : .gray.opacity(0.4))
+                            .padding(.vertical, 0.02)
+                    }//End of Button
+                }//End of VStack
+                
+                Spacer()
+                
+            }//End of HStack
             
-            
-            Messages()
-                .environmentObject(SideMenuData())
-                .tabItem {
-                    Image(systemName: selectedTab == 3 ? "envelope.fill" : "envelope")
-                }
-                .tag(3)
-        }
+        }//End of VSTack
+        .padding(.bottom, 10)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()
+            .environmentObject(SideMenuData())
     }
 }
