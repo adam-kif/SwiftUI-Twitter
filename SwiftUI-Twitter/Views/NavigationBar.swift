@@ -15,6 +15,8 @@ struct NavigationBar: ViewModifier {
     let navbarIcon: String?
     let iconName: String
     
+    @State private var searchInput = ""
+    
     func body(content: Content) -> some View {
         
 //        NavigationView{
@@ -37,8 +39,10 @@ struct NavigationBar: ViewModifier {
                                     .font(.title3)
                                     .foregroundColor(.darkColor)
                                     .bold()
-                            }else{
+                            }else if navbarIcon != nil{
                                 Image(navbarIcon!)
+                            }else{
+                                SearchBar(searchInput: $searchInput)
                             }
                         }
                         
