@@ -68,7 +68,11 @@ struct Authentication: View {
                         .autocapitalization(.none)
                         .keyboardType(.emailAddress)
                         .onChange(of: email) { _ in
-                            showErrorEmail = false
+                            if email.count > 0 && email.contains("@"){
+                                showErrorEmail = false
+                            }else{
+                                showErrorEmail = true
+                            }
                         }
                     
                     if showErrorEmail {
@@ -94,8 +98,10 @@ struct Authentication: View {
                                 .foregroundColor(.primaryColor), alignment: .bottom)
                         .autocapitalization(.none)
                         .onChange(of: passowrd) { _ in
-                            if !passowrd.isEmpty && passowrd.count == 8 {
+                            if passowrd.count >= 8 {
                                 showErrorPassword = false
+                            }else{
+                                showErrorPassword = true
                             }
                         }
                     
@@ -113,19 +119,24 @@ struct Authentication: View {
                 
                 //MARK: - Log In
                 Button(action: {
-                    if email.isEmpty || passowrd.isEmpty || passowrd.count < 8 {
+                    if email.count == 0 || !email.contains("@") || passowrd.count < 8 {
+                        
                         showErrorEmail = true
                         showErrorPassword = true
                         
-                    }else if email.isEmpty {
+                    }else if email.count == 0 || !email.contains("@"){
                         
                         showErrorEmail = true
                         
-                    }else if passowrd.isEmpty || passowrd.count < 8 {
+                    }else if passowrd.count < 8 {
                         
                         showErrorPassword = true
                         
                     }else{
+//                        email = ""
+//                        passowrd = ""
+                        showErrorEmail = false
+                        showErrorPassword = false
                         
                         if showSignUp{
                             
